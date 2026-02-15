@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JKT48 Gen 12 Fitness Journey - Enhanced RPG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Audio Confirmation Modal -->
+    <div class="audio-modal" id="audio-modal">
+        <div class="audio-modal-content">
+            <h2>🎵 Nikmati Pengalaman Bermain! 🎵</h2>
+            <p>Untuk pengalaman bermain yang lebih seru dan immersive, kami menyediakan background music!</p>
+            <p style="font-size: 0.95em; color: #999;">Kamu bisa mengatur musik kapan saja dengan tombol kontrol di pojok kanan bawah.</p>
+            <div class="audio-modal-buttons">
+                <button class="audio-btn audio-btn-yes" onclick="enableMusic()">🎵 Ya, Putar Musik!</button>
+                <button class="audio-btn audio-btn-no" onclick="disableMusic()">🔇 Tidak, Terima Kasih</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="sound/JKT48 - Putri Duyung yang Sedang Sedih (Lirik) ｜ Pajama Drive 27 April 2025.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Music Control Button -->
+    <button class="music-control hidden" id="music-control" onclick="toggleMusic()">
+        <span id="music-icon">🔊</span>
+    </button>
+
+    <!-- Stars Animation -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Splash Screen -->
+    <div class="splash-screen" id="splash-screen">
+        <div class="splash-content">
+            <h1>💖 JKT48 Gen 12 💖</h1>
+            <p>Enhanced Fitness Journey RPG</p>
+            
+            <div class="name-input-container">
+                <label for="player-name">✨ Masukkan Nama Kamu:</label>
+                <input type="text" id="player-name" placeholder="Nama kamu..." maxlength="20">
+            </div>
+
+            <div class="oshi-selection">
+                <h2>💕 Pilih Oshi Kamu! 💕</h2>
+                <div class="oshi-grid" id="oshi-grid"></div>
+                <button class="start-btn" id="start-game-btn" disabled>Mulai Petualangan! 🚀</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Game Container -->
+    <div class="game-container" id="game-container" style="display: none;">
+        <div class="header">
+            <h1>💖 JKT48 Gen 12 Fitness Journey 💖</h1>
+            <p>Raih Mimpimu Bersama Oshi!</p>
+        </div>
+
+        <div class="stats-panel">
+            <div class="stat-card">
+                <div class="stat-label">💪 OTOT</div>
+                <div class="stat-value" id="muscle-value">5</div>
+                <div class="stat-bar">
+                    <div class="stat-bar-fill muscle-bar" id="muscle-bar" style="width: 5%"></div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">🔥 LEMAK</div>
+                <div class="stat-value" id="fat-value">85</div>
+                <div class="stat-bar">
+                    <div class="stat-bar-fill fat-bar" id="fat-bar" style="width: 85%"></div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">⚖️ BERAT</div>
+                <div class="stat-value" id="weight-value">120 kg</div>
+                <div class="stat-bar">
+                    <div class="stat-bar-fill weight-bar" id="weight-bar" style="width: 100%"></div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">⚡ ENERGI</div>
+                <div class="stat-value" id="energy-value">80</div>
+                <div class="stat-bar">
+                    <div class="stat-bar-fill energy-bar" id="energy-bar" style="width: 80%"></div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">😊 PERCAYA DIRI</div>
+                <div class="stat-value" id="confidence-value">10</div>
+                <div class="stat-bar">
+                    <div class="stat-bar-fill confidence-bar" id="confidence-bar" style="width: 10%"></div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">📚 PENGETAHUAN</div>
+                <div class="stat-value" id="knowledge-value">5</div>
+                <div class="stat-bar">
+                    <div class="stat-bar-fill knowledge-bar" id="knowledge-bar" style="width: 5%"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="character-display">
+            <div class="character-sprite" id="character">🧑‍🦲</div>
+            <div class="character-name" id="character-name"></div>
+            <div class="oshi-info" id="oshi-display"></div>
+            <div class="day-counter" id="day-counter">📅 Hari ke-1</div>
+        </div>
+
+        <div class="inventory-panel" id="inventory-panel" style="display: none;">
+            <div class="inventory-title">🎒 Inventory:</div>
+            <div class="inventory-items" id="inventory-items"></div>
+        </div>
+
+        <div class="story-panel" id="story-panel">
+            <div class="chapter-title" id="chapter-title"></div>
+            <div class="story-text" id="story-text"></div>
+            <div class="choices" id="choices"></div>
+        </div>
+    </div>
+
+    <div class="notification" id="notification">
+        <div class="notification-text" id="notification-text"></div>
+    </div>
+
+    <!-- Link to external JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
